@@ -154,6 +154,21 @@ public class Game {
 
         char dash = '-';
 
+        int emptyBlocks = 0;
+        int sizeOfGrid = grid.length;
+
+        for(int i = 0; i < sizeOfGrid; i++) {
+            for(int j = 0; j < sizeOfGrid; j++) {
+                if(grid[i][j] != '-') {
+                    emptyBlocks  = emptyBlocks  + 1;
+                }
+            }
+        }
+
+        if(emptyBlocks  == sizeOfGrid * sizeOfGrid){
+            result = "tie";
+        }
+
         if(grid[0][0] == grid[0][1] && grid[0][0] == grid[0][2] && dash != grid[0][0]){
             result = Character.toUpperCase(grid[0][0])+ " wins";
         }
@@ -185,21 +200,6 @@ public class Game {
 
         else if(grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0] && dash != grid[0][2]){
             result = Character.toUpperCase(grid[0][2])+ " wins";
-        }
-
-        int emptyBlocks = 0;
-        int sizeOfGrid = grid.length;
-
-        for(int i = 0; i < sizeOfGrid; i++) {
-            for(int j = 0; j < sizeOfGrid; j++) {
-                if(grid[i][j] != '-') {
-                    emptyBlocks  = emptyBlocks  + 1;
-                }
-            }
-        }
-
-        if(emptyBlocks  == sizeOfGrid * sizeOfGrid){
-            result = "tie";
         }
 
 
