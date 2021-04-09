@@ -150,7 +150,58 @@ public class Game {
      */
     public String checkGameWinner(char [][]grid){
         String result = "None";
-        //Student code goes here ...
+
+        char dash = '-';
+
+        if(grid[0][0] == grid[0][1] && grid[0][0] == grid[0][2] && dash != grid[0][0]){
+            result = Character.toUpperCase(grid[0][0])+ " WIN";
+        }
+
+
+        else if(grid[0][0] == grid[1][0] && grid[0][0] == grid[2][0] && dash != grid[0][0]){
+            result = Character.toUpperCase(grid[0][0])+ " WIN";
+        }
+
+        else if(grid[1][0] == grid[1][1] && grid[1][0] == grid[1][2] && dash != grid[1][0]){
+            result = Character.toUpperCase(grid[1][0])+ " WIN";
+        }
+
+        else if(grid[0][1] == grid[1][1] && grid[0][1] == grid[2][1] && dash != grid[0][1]){
+            result = Character.toUpperCase(grid[0][1])+ " WIN";
+        }
+
+        else if(grid[2][0] == grid[2][1] && grid[2][0] == grid[2][2] && dash != grid[2][0]){
+            result = Character.toUpperCase(grid[2][0])+ " WIN";
+        }
+
+        else if(grid[0][2] == grid[1][2] && grid[0][2] == grid[2][2] && dash != grid[0][2]){
+            result = Character.toUpperCase(grid[0][2])+ " WIN";
+        }
+
+        else if(grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && dash != grid[0][0]){
+            result = Character.toUpperCase(grid[0][0])+ " WIN";
+        }
+
+        else if(grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0] && dash != grid[0][2]){
+            result = Character.toUpperCase(grid[0][2])+ " WIN";
+        }
+
+        int emptyBlocks = 0;
+        int sizeOfGrid = grid.length;
+
+        for(int i = 0; i < sizeOfGrid; i++) {
+            for(int j = 0; j < sizeOfGrid; j++) {
+                if(grid[i][j] != '-') {
+                    emptyBlocks  = emptyBlocks  + 1;
+                }
+            }
+        }
+
+        if(emptyBlocks  == sizeOfGrid * sizeOfGrid){
+            result = "TIED";
+        }
+
+
         return result;
     }
 
