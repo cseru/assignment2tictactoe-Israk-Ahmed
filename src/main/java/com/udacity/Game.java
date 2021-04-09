@@ -148,42 +148,43 @@ public class Game {
      * @param grid 2D array of characters representing the game board
      * @return String indicating the outcome of the game: "X wins" or "O wins" or "Tie" or "None"
      */
+
     public String checkGameWinner(char [][]grid){
         String result = "None";
 
         char dash = '-';
 
         if(grid[0][0] == grid[0][1] && grid[0][0] == grid[0][2] && dash != grid[0][0]){
-            result = Character.toUpperCase(grid[0][0])+ " WIN";
+            result = Character.toUpperCase(grid[0][0])+ " wins";
         }
 
 
         else if(grid[0][0] == grid[1][0] && grid[0][0] == grid[2][0] && dash != grid[0][0]){
-            result = Character.toUpperCase(grid[0][0])+ " WIN";
+            result = Character.toUpperCase(grid[0][0])+ " wins";
         }
 
         else if(grid[1][0] == grid[1][1] && grid[1][0] == grid[1][2] && dash != grid[1][0]){
-            result = Character.toUpperCase(grid[1][0])+ " WIN";
+            result = Character.toUpperCase(grid[1][0])+ " wins";
         }
 
         else if(grid[0][1] == grid[1][1] && grid[0][1] == grid[2][1] && dash != grid[0][1]){
-            result = Character.toUpperCase(grid[0][1])+ " WIN";
+            result = Character.toUpperCase(grid[0][1])+ " wins";
         }
 
         else if(grid[2][0] == grid[2][1] && grid[2][0] == grid[2][2] && dash != grid[2][0]){
-            result = Character.toUpperCase(grid[2][0])+ " WIN";
+            result = Character.toUpperCase(grid[2][0])+ " wins";
         }
 
         else if(grid[0][2] == grid[1][2] && grid[0][2] == grid[2][2] && dash != grid[0][2]){
-            result = Character.toUpperCase(grid[0][2])+ " WIN";
+            result = Character.toUpperCase(grid[0][2])+ " wins";
         }
 
         else if(grid[0][0] == grid[1][1] && grid[0][0] == grid[2][2] && dash != grid[0][0]){
-            result = Character.toUpperCase(grid[0][0])+ " WIN";
+            result = Character.toUpperCase(grid[0][0])+ " wins";
         }
 
         else if(grid[0][2] == grid[1][1] && grid[0][2] == grid[2][0] && dash != grid[0][2]){
-            result = Character.toUpperCase(grid[0][2])+ " WIN";
+            result = Character.toUpperCase(grid[0][2])+ " wins";
         }
 
         int emptyBlocks = 0;
@@ -198,7 +199,7 @@ public class Game {
         }
 
         if(emptyBlocks  == sizeOfGrid * sizeOfGrid){
-            result = "TIED";
+            result = "tie";
         }
 
 
